@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Go cache dictionary</title>
+  </head>
+  <body>
+  <p> Search for word definitions </p>
+    <p>You searched for {{.Word}} </p>
+    <p>Its definition is: {{.Definition}} </p>
+    <form action="/search" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Search"></div>
+    </form>
+  </body>
+</html>

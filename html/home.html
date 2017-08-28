@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JJs Dictionary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading Bootstrap -->
+    <link href="/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="/dist/css/flat-ui.css" rel="stylesheet">
+    <link href="/docs/assets/css/docs.css" rel="stylesheet">
+    <!-- Sweetalert-->
+  </head>
+  <body onload="">
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand active" href="/">Dictionary</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+    <ul class="nav navbar-nav">
+    </ul>
+    <form class="navbar-form navbar-right" action="/search">
+      <div class="form-group">
+        <div class="input-group">
+          <input name="content" class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+<br>
+<br>
+    <div class="container">
+      {{if .}}
+      <br>
+      <div class="demo-row">
+        <div class="demo-title">
+          <h2>{{.Word}}</h2>
+        </div>
+        <div class="demo-content demo-content-article">
+          <p>{{.Definition}}</p>
+        </div>
+      </div>    
+      {{else}}
+      <h1 class="demo-headline">Memcache</h1>
+      <div class="demo-row">
+        <div class="demo-title">
+          <h3>Qué es memcache</h3>
+        </div>
+        <div class="demo-content demo-content-article">
+          <p>Memcache es un motor de bases de datos en memoria basado en pares llave-valor (como Redis).</p>
+          <p>Memcache se ofrece como un servicio mediante el API del AppEngine de Google. </p>
+        </div>
+      </div> 
+      <div class="demo-row">
+        <div class="demo-title">
+          <h3>Por y para qué</h3>
+        </div>
+        <div class="demo-content demo-content-article">
+          <p>Rendimiento y costos</p>
+          <ul>
+            <li>Tokens</li>
+            <li>Llamados a APIs (como este app)</li>
+            <li>Contadores</li>
+            <li>Configuraciones</li>
+            <li>Lecturas con menor latencia...</li>
+          </ul>  
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-title">
+          <h3>Cómo usarlo</h3>
+        </div>
+        <div class="demo-content demo-content-article">
+          <p>En Java, utilizando el API del AppEngine o de 
+            <a href="https://cloud.google.com/appengine/docs/standard/java/memcache/using#using_jcache" target="_blank">JCache</a></p>
+          <p>En Go y Python utilizando el 
+          <a href="https://godoc.org/google.golang.org/appengine/memcache" target="_blank">modulo de memcache</a> del AppEngine</p>
+        </div>
+      </div>
+      {{end}}
+    </div>
+
+  </body>
+</html>
